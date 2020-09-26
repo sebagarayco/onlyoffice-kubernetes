@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: onlyoffice-rabbitmq
+  name: onlyoffice-rabbitmq
+  namespace: onlyoffice  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: onlyoffice-rabbitmq
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: onlyoffice-rabbitmq
+    spec:
+      containers:
+      - image: rabbitmq
+        imagePullPolicy: ""
+        name: onlyoffice-rabbitmq
+        ports:
+        - containerPort: 5672
+        resources: {}
+      restartPolicy: Always
+status: {}

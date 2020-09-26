@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: onlyoffice-postgresql
+  name: onlyoffice-postgresql
+  namespace: onlyoffice  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: onlyoffice-postgresql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+          io.kompose.service: onlyoffice-postgresql
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_DB
+          value: onlyoffice
+        - name: POSTGRES_HOST_AUTH_METHOD
+          value: trust
+        - name: POSTGRES_USER
+          value: onlyoffice
+        image: postgres:9.5
+        imagePullPolicy: ""
+        name: onlyoffice-postgresql
+        ports:
+        - containerPort: 5432
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/postgresql
+          name: onlyoffice-postgresql-data
+      restartPolicy: Always
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: onlyoffice-postgresql-data
+        persistentVolumeClaim:
+          claimName: onlyoffice-postgresql-claim  
