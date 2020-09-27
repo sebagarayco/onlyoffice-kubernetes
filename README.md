@@ -7,6 +7,7 @@ Kubernetes templates manifests based on [ONLYOFFICE Docker-DocumentServer](https
 
 - NFS Provisioner storage class called "nfs-client" has been previously configured.
 - LoadBalancer funcionality can be achieved either via Cloud Provider or MetalLB/Projectcontour projects.
+- HTTPS is desired and Onlyoffice SSL secret containing certificate and private key exists. If not, follow [this example](yamls/example_onlyoffice-ssl_secret.yaml).
 
 ## Files
 

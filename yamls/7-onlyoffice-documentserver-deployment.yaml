@@ -50,10 +50,16 @@ spec:
           name: onlyoffice-documentserver-data
         - mountPath: /usr/share/fonts
           name: onlyoffice-documentserver-data
+        - mountPath: /app/onlyoffice/DocumentServer/data/certs
+          name: onlyoffice-ssl
+          readOnly: true  
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
       - name: onlyoffice-documentserver-data
         persistentVolumeClaim: 
           claimName: onlyoffice-documentserver-claim
+      - name: onlyoffice-ssl
+        secret:
+          secretName: onlyoffice-ssl      
 status: {}
