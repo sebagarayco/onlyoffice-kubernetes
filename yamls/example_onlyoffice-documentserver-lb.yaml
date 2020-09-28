@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    io.kompose.service: onlyoffice-documentserver
+  name: onlyoffice-documentserver-lb
+  namespace: onlyoffice
+spec:
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    io.kompose.service: onlyoffice-documentserver
+  type: LoadBalancer
