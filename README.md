@@ -26,3 +26,6 @@ Kubernetes templates manifests based on [ONLYOFFICE Docker-DocumentServer](https
 	- 7-onlyoffice-documentserver-deployment.yaml
 	- 8-onlyoffice-documentserver-service.yaml
 
+## Screenshot
+
+![onlyoffice](img/onlyoffice.png)
