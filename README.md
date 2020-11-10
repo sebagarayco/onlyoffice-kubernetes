@@ -1,4 +1,7 @@
 # onlyoffice-kubernetes
+
+<img src="https://img.shields.io/github/forks/sebagarayco/onlyoffice-kubernetes"> <img src="https://img.shields.io/github/issues/sebagarayco/onlyoffice-kubernetes"> <img src="https://img.shields.io/github/stars/sebagarayco/onlyoffice-kubernetes">
+
 Onlyoffice Document Server - Kubernetes manifests
 
 Kubernetes templates manifests based on [ONLYOFFICE Docker-DocumentServer](https://github.com/ONLYOFFICE/Docker-DocumentServer).
